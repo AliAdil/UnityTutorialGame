@@ -7,6 +7,7 @@ namespace alistudios
     public class TestingCube : MonoBehaviour
     {
         public float Speed;
+        public float Acc;
         void Update()
         {
             if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
