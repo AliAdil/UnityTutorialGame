@@ -149,7 +149,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.8554028, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -290,12 +290,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.10524687, y: 0.69564146, z: -0.10415052, w: -0.70296425}
-  m_LocalPosition: {x: 9.1, y: 4, z: 0.1}
+  m_LocalPosition: {x: 2.51, y: 1.98, z: 0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 17.03, y: 270.6, z: 0}
+--- !u!95 &1135887196 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7806908904786947170, guid: 78227451026a6434ba3f188a76f4315d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7803885420266879295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4600767549272197835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,6 +378,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7803885419156401530, guid: 78227451026a6434ba3f188a76f4315d,
+        type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803885419156401530, guid: 78227451026a6434ba3f188a76f4315d,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1135887196}
     - target: {fileID: 7803885419156401531, guid: 78227451026a6434ba3f188a76f4315d,
         type: 3}
       propertyPath: m_RootOrder
@@ -427,15 +443,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7803885419156401533, guid: 78227451026a6434ba3f188a76f4315d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7803885419156401535, guid: 78227451026a6434ba3f188a76f4315d,
         type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806908904779940376, guid: 78227451026a6434ba3f188a76f4315d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7806908904786947170, guid: 78227451026a6434ba3f188a76f4315d,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c473ad61eb41a3b4e9c3cdf4907a0716, type: 2}
+    - target: {fileID: 7806908904786947170, guid: 78227451026a6434ba3f188a76f4315d,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78227451026a6434ba3f188a76f4315d, type: 3}

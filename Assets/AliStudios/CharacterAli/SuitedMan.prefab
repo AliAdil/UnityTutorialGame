@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7803885419156401534}
   - component: {fileID: 7803885419156401530}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SuitedMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 8
+  animator: {fileID: 0}
 --- !u!1001 &7806908904779553026
 PrefabInstance:
   m_ObjectHideFlags: 0
