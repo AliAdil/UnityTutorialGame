@@ -8,7 +8,7 @@ namespace alistudios
     {
         void Update()
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.N))
             {
                 VirtualInputManager.Instance.MoveRight = true;
             }
@@ -17,7 +17,7 @@ namespace alistudios
                 VirtualInputManager.Instance.MoveRight = false;
             }
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.V))
             {
                 VirtualInputManager.Instance.MoveLeft = true;
             }
@@ -25,6 +25,8 @@ namespace alistudios
             {
                 VirtualInputManager.Instance.MoveLeft = false;
             }
+
+            
         }
     }
 }
