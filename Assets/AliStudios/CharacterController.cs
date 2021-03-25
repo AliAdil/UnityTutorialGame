@@ -15,6 +15,7 @@ namespace alistudios
 
         }
 
+
         public float Speed;
         public Animator animator;
         void Update()
@@ -23,6 +24,7 @@ namespace alistudios
             // When pressed both button
             if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
             {
+
                 // Setting animation to idle state
                 animator.SetBool(TransitionParameters.Move.ToString(), false);
                 animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
@@ -42,7 +44,9 @@ namespace alistudios
 
             // when Right button is pressed 
             if (VirtualInputManager.Instance.MoveRight)
-            {   // for player movement to right
+            {
+
+                // for player movement to right
                 this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
                 // turn player face on right
                 // Euler(X,Y,Z) axis
@@ -51,6 +55,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.D))
                 {
+                 
                     animator.SetBool(TransitionParameters.Move.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -59,6 +64,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.C))
                 {
+                   
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -67,6 +73,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.E))
                 {
+                   
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
@@ -75,6 +82,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.N))
                 {
+              
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -96,6 +104,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.A))
                 {
+                  
                     animator.SetBool(TransitionParameters.Move.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -105,6 +114,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.Z))
                 {
+                   
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -114,6 +124,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.Q))
                 {
+                   
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
@@ -123,6 +134,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.V))
                 {
+                   
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
