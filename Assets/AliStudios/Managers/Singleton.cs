@@ -6,19 +6,22 @@ namespace alistudios
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        // One instance
+        // Private Variable 
         private static T _instance;
 
-        //Public variable which is generic T
+        //Public static method
         public static T Instance
-        {
+        { 
             get
             {
                 _instance = (T)FindObjectOfType(typeof(T));
                 if(_instance == null)
                 {
+                    // Creating empty gameobject in the scene
                     GameObject obj = new GameObject();
+                    // to that game object we are attacting singleton game script
                     _instance = obj.AddComponent<T>();
+                    // Renaming that gameobject same as singleton script
                     obj.name  = typeof(T).ToString();
                 
                 }
