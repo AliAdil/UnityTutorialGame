@@ -15,6 +15,7 @@ namespace alistudios
         {
             DrawDefaultInspector();
 
+            GUILayout.Label("This is material changer");
             CharacterController control = (CharacterController)target;
 
             if (GUILayout.Button("Change Material"))

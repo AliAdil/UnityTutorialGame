@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 2.39
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cc421da483ed06c49933077a621bff25, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45135444, g: 0.500349, b: 0.569637, a: 1}
+  m_IndirectSpecularColor: {r: 0.3270574, g: 0.28162277, b: 0.41666096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   animator: {fileID: 1370093749}
+  material: {fileID: 0}
 --- !u!65 &156032447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   animator: {fileID: 1727809866}
+  material: {fileID: 0}
 --- !u!65 &590303503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -569,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   animator: {fileID: 1070064893}
+  material: {fileID: 0}
 --- !u!65 &746938358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -690,6 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   animator: {fileID: 797391887}
+  material: {fileID: 0}
 --- !u!65 &1056049515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -855,21 +859,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DefaultFemalePBR (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8117583199093232115, guid: f0aa068246263dd4ba7a61b712d2c765,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8117583199093232115, guid: f0aa068246263dd4ba7a61b712d2c765,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c473ad61eb41a3b4e9c3cdf4907a0716, type: 2}
-    - target: {fileID: 8117583199093232115, guid: f0aa068246263dd4ba7a61b712d2c765,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0aa068246263dd4ba7a61b712d2c765, type: 3}
@@ -1180,6 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   animator: {fileID: 1107729227}
+  material: {fileID: 0}
 --- !u!65 &1987661809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1415,6 +1405,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 963194227, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194227, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: field of view
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194227, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194227, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: m_FocalLength
+      value: 24.603645
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194227, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194228, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194228, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194228, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.37
+      objectReference: {fileID: 0}
     - target: {fileID: 7803885419156401531, guid: 78227451026a6434ba3f188a76f4315d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1473,17 +1495,7 @@ PrefabInstance:
     - target: {fileID: 7803885419156401535, guid: 78227451026a6434ba3f188a76f4315d,
         type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: SuitedMan
       objectReference: {fileID: 0}
-    - target: {fileID: 7806908904791151266, guid: 78227451026a6434ba3f188a76f4315d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 34b0ed1dcc182c143b1bd9567ee94fc4, type: 2}
-    - target: {fileID: 7806908904791151268, guid: 78227451026a6434ba3f188a76f4315d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 34b0ed1dcc182c143b1bd9567ee94fc4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78227451026a6434ba3f188a76f4315d, type: 3}

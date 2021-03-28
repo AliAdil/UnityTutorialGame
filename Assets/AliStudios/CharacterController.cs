@@ -19,6 +19,7 @@ namespace alistudios
         public float Speed;
         public Animator animator;
 
+
         public Material material;
         void Update()
         {
@@ -146,6 +147,7 @@ namespace alistudios
             }
         }
 
+        // custom matrial change method
         public void ChangeMaterial()
         {
 
