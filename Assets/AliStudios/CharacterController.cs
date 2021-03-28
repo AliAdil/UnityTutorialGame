@@ -18,6 +18,8 @@ namespace alistudios
 
         public float Speed;
         public Animator animator;
+
+        public Material material;
         void Update()
         {
 
@@ -55,7 +57,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.D))
                 {
-                 
+
                     animator.SetBool(TransitionParameters.Move.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -64,7 +66,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.C))
                 {
-                   
+
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -73,7 +75,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.E))
                 {
-                   
+
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
@@ -82,7 +84,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.N))
                 {
-              
+
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -104,7 +106,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.A))
                 {
-                  
+
                     animator.SetBool(TransitionParameters.Move.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -114,7 +116,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.Z))
                 {
-                   
+
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -124,7 +126,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.Q))
                 {
-                   
+
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
@@ -134,7 +136,7 @@ namespace alistudios
 
                 if (Input.GetKey(KeyCode.V))
                 {
-                   
+
                     animator.SetBool(TransitionParameters.Move.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
                     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
@@ -142,6 +144,30 @@ namespace alistudios
 
                 }
             }
+        }
+
+        public void ChangeMaterial()
+        {
+
+            // we don't want material to be Null 
+            if (material == null)
+            {
+                Debug.LogError("No matrial found");
+            }
+            // initialized renderer component array with this gameObject's children components of type Renderer 
+            Renderer[] arrMaterial = this.gameObject.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer r in arrMaterial)
+            {
+                // don't want to change material for character controller
+                if (r.gameObject != this.gameObject)
+                {
+
+                    // material is a public variable 
+                    r.material = material;
+                }
+            }
+
         }
 
     }
