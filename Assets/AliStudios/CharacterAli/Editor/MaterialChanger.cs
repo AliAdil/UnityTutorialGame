@@ -6,6 +6,8 @@ using UnityEditor;
 
 namespace alistudios
 {
+
+    //Creates a custom Label on the inspector for all the scripts named CharacterController
     [CustomEditor(typeof(CharacterController))]
     public class MaterialChanger : Editor
     {
@@ -13,9 +15,10 @@ namespace alistudios
         {
             DrawDefaultInspector();
 
-            CharacterController control = (CharacterController) target;
+            CharacterController control = (CharacterController)target;
 
-            if(GUILayout.Button("Change Material")){
+            if (GUILayout.Button("Change Material"))
+            {
                 control.ChangeMaterial();
             }
 
