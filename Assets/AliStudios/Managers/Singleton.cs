@@ -14,7 +14,7 @@ namespace alistudios
         { 
             get
             {
-                _instance = (T)FindObjectOfType(typeof(T));
+                //_instance = (T)FindObjectOfType(typeof(T));
                 if(_instance == null)
                 {
                     // Creating empty gameobject in the scene
