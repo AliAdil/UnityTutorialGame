@@ -6,35 +6,126 @@ using UnityEditor;
 
 namespace alistudios
 {
-
-    //Creates a custom Label on the inspector for all the scripts named CharacterController
-    [CustomEditor(typeof(CharacterController))]
-    public class MaterialChanger : Editor
+    public class MaterialChanger : MonoBehaviour
     {
-        public override void OnInspectorGUI()
+        public Material material;
+        public List<GameObject> CurrentObjects = new List<GameObject>();
+        public List<Material> CurrentMaterials = new List<Material>();
+        public List<Material> NewMaterials = new List<Material>();
+
+        public void ChangeMaterial()
         {
-            DrawDefaultInspector();
-
-            GUILayout.Label("This is material changer");
-            CharacterController control = (CharacterController)target;
-
-            if (GUILayout.Button("Change Material"))
+            if (material == null)
             {
-                control.ChangeMaterial();
+                Debug.LogError("No material specified");
             }
 
+            Renderer[] arrMaterials = this.gameObject.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer r in arrMaterials)
+            {
+                if (r.gameObject != this.gameObject)
+                {
+                    Debug.Log("Changing material on: " + r.gameObject.name + " / " + material.name);
+                    r.material = material;
+                }
+            }
         }
-        void Start()
-        {
 
+        public void ChangeComplexMaterial()
+        {
+            Debug.Log("Changing multiple materials");
+
+            Dictionary<GameObject, int> ChangeSchedule = new Dictionary<GameObject, int>();
+
+            Renderer[] arrRenderers = this.gameObject.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer r in arrRenderers)
+            {
+                if (r.gameObject != this.gameObject)
+                {
+                    for (int i = 0; i < CurrentObjects.Count; i++)
+                    {
+                        if (NewMaterials[i] == null)
+                        {
+                            Debug.LogError("New Material is empty: " + "index " + i);
+                            continue;
+                        }
+                        else if (r.sharedMaterial == CurrentObjects[i].GetComponent<Renderer>().sharedMaterial)
+                        {
+                            Debug.Log("Change schedule: " + r.gameObject.name + " / " + NewMaterials[i].name);
+                            ChangeSchedule.Add(r.gameObject, i);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            foreach(KeyValuePair<GameObject,int>data in ChangeSchedule)
+            {
+                Debug.Log("Changing material: " + data.Key.name + " / " + NewMaterials[data.Value].name);
+                data.Key.GetComponent<Renderer>().sharedMaterial = NewMaterials[data.Value];
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        public void IdentifyMaterials()
         {
+            Renderer[] arrRenderers = this.gameObject.GetComponentsInChildren<Renderer>();
 
+            foreach (Renderer r in arrRenderers)
+            {
+                bool skip = false;
+
+                if (r.gameObject != this.gameObject)
+                {
+                    foreach(GameObject obj in CurrentObjects)
+                    {
+                        if (obj.GetComponent<Renderer>().sharedMaterial == r.sharedMaterial)
+                        {
+                            skip = true;
+                            break;
+                        }
+                    }
+
+                    if (!skip)
+                    {
+                        CurrentObjects.Add(r.gameObject);
+                        CurrentMaterials.Add(r.sharedMaterial);
+                        NewMaterials.Add(null);
+                    }
+                }
+            }
         }
     }
+
+    //Creates a custom Label on the inspector for all the scripts named CharacterController
+    // [CustomEditor(typeof(CharacterController))]
+    // public class MaterialChanger : Editor
+    // {
+    //     public override void OnInspectorGUI()
+    //     {
+    //         DrawDefaultInspector();
+
+    //         GUILayout.Label("This is material changer");
+    //         CharacterController control = (CharacterController)target;
+
+    //         if (GUILayout.Button("Change Material"))
+    //         {
+    //             control.ChangeMaterial();
+    //         }
+
+    //     }
+    //     void Start()
+    //     {
+
+    //     }
+
+    //     // Update is called once per frame
+    //     void Update()
+    //     {
+
+    //     }
+    // }
 
     // Start is called before the first frame update
 
