@@ -21,131 +21,131 @@ namespace alistudios
 
 
         public Material material;
-        void Update()
-        {
+        // void Update()
+        // {
 
-            // When pressed both button
-            if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
-            {
+            // // When pressed both button
+            // if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
+            // {
 
-                // Setting animation to idle state
-                animator.SetBool(TransitionParameters.Move.ToString(), false);
-                animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
-                return;
-            }
+            //     // Setting animation to idle state
+            //     animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //     animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            //     return;
+            // }
 
-            // when no button is pressed 
-            if (!VirtualInputManager.Instance.MoveLeft && !VirtualInputManager.Instance.MoveRight)
-            { // Setting animation to idle state
-                animator.SetBool(TransitionParameters.Move.ToString(), false);
-                animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
-            }
+            // // when no button is pressed 
+            // if (!VirtualInputManager.Instance.MoveLeft && !VirtualInputManager.Instance.MoveRight)
+            // { // Setting animation to idle state
+            //     animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //     animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //     animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //     animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            // }
 
-            // when Right button is pressed 
-            if (VirtualInputManager.Instance.MoveRight)
-            {
+            // // when Right button is pressed 
+            // if (VirtualInputManager.Instance.MoveRight)
+            // {
 
-                // for player movement to right
-                this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-                // turn player face on right
-                // Euler(X,Y,Z) axis
-                this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                // Setting animation into moving state
+            //     // for player movement to right
+            //     this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+            //     // turn player face on right
+            //     // Euler(X,Y,Z) axis
+            //     this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            //     // Setting animation into moving state
 
-                if (Input.GetKey(KeyCode.D))
-                {
+            //     if (Input.GetKey(KeyCode.D))
+            //     {
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), true);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
-                }
+            //         animator.SetBool(TransitionParameters.Move.ToString(), true);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            //     }
 
-                if (Input.GetKey(KeyCode.C))
-                {
+            //     if (Input.GetKey(KeyCode.C))
+            //     {
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
-                }
+            //         animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            //     }
 
-                if (Input.GetKey(KeyCode.E))
-                {
+            //     if (Input.GetKey(KeyCode.E))
+            //     {
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
-                }
+            //         animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            //     }
 
-                if (Input.GetKey(KeyCode.N))
-                {
+            //     if (Input.GetKey(KeyCode.N))
+            //     {
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), true);
-                }
-
-
-            }
+            //         animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), true);
+            //     }
 
 
-            // when left button is pressed 
-            if (VirtualInputManager.Instance.MoveLeft)
-            {
-                // for player movement to left 
-                this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-                // turn player face on left 
-                this.gameObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                // Setting animation into moving state
+            // }
 
-                if (Input.GetKey(KeyCode.A))
-                {
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), true);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            // // when left button is pressed 
+            // if (VirtualInputManager.Instance.MoveLeft)
+            // {
+            //     // for player movement to left 
+            //     this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+            //     // turn player face on left 
+            //     this.gameObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            //     // Setting animation into moving state
 
-                }
+            //     if (Input.GetKey(KeyCode.A))
+            //     {
 
-                if (Input.GetKey(KeyCode.Z))
-                {
+            //         animator.SetBool(TransitionParameters.Move.ToString(), true);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            //     }
 
-                }
+            //     if (Input.GetKey(KeyCode.Z))
+            //     {
 
-                if (Input.GetKey(KeyCode.Q))
-                {
+            //         animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), true);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
+            //     }
 
-                }
+            //     if (Input.GetKey(KeyCode.Q))
+            //     {
 
-                if (Input.GetKey(KeyCode.V))
-                {
+            //         animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), true);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), false);
 
-                    animator.SetBool(TransitionParameters.Move.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
-                    animator.SetBool(TransitionParameters.MoveWalking.ToString(), true);
+            //     }
 
-                }
-            }
-        }
+            //     if (Input.GetKey(KeyCode.V))
+            //     {
+
+            //         animator.SetBool(TransitionParameters.Move.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStandardWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveStrutWalk.ToString(), false);
+            //         animator.SetBool(TransitionParameters.MoveWalking.ToString(), true);
+
+            //     }
+            // }
+        // }
 
         // custom matrial change method
         public void ChangeMaterial()
