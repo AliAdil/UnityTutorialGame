@@ -8,12 +8,28 @@ namespace alistudios
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-
+            Debug.Log("catwalk idle OnStateUpdate");
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+
+               // When pressed both button
+            if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
+            {
+
+                // Setting animation to idle state
+                animator.SetBool(CharacterController.TransitionParameters.Move.ToString(), false);
+                return;
+            }
+
+            // when no button is pressed 
+            if (!VirtualInputManager.Instance.MoveLeft && !VirtualInputManager.Instance.MoveRight)
+            { // Setting animation to idle state
+                animator.SetBool(CharacterController.TransitionParameters.Move.ToString(), false);
+                return;
+            }
             // when Right button is pressed 
             if (VirtualInputManager.Instance.MoveRight)
             {
@@ -25,11 +41,11 @@ namespace alistudios
                 GetCharacterController(animator).transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 // Setting animation into moving state
 
-               
+                // Debug.Log("I am right button form animator");
 
-                    animator.SetBool("Move", true);
+                // animator.SetBool("Move", true);
 
-                
+
 
 
 
@@ -46,14 +62,19 @@ namespace alistudios
                 GetCharacterController(animator).transform.rotation = Quaternion.Euler(0f, 180f, 0f);
                 // Setting animation into moving state
 
-              
-
-                    animator.SetBool("Move", true);
 
 
-                
+                // Debug.Log("I am left button form animator");
+                // animator.SetBool("Move", true);
+
+
+
 
             }
+
+
+
+            
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

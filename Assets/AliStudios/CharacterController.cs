@@ -21,6 +21,30 @@ namespace alistudios
 
 
         public Material material;
+        
+        public void ChangeMaterial()
+        {
+
+            // we don't want material to be Null 
+            if (material == null)
+            {
+                Debug.LogError("No matrial found");
+            }
+            // initialized renderer component array with this gameObject's children components of type Renderer 
+            Renderer[] arrMaterial = this.gameObject.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer r in arrMaterial)
+            {
+                // don't want to change material for character controller
+                if (r.gameObject != this.gameObject)
+                {
+
+                    // material is a public variable 
+                    r.material = material;
+                }
+            }
+
+        }
         // void Update()
         // {
 
@@ -148,29 +172,6 @@ namespace alistudios
         // }
 
         // custom matrial change method
-        public void ChangeMaterial()
-        {
-
-            // we don't want material to be Null 
-            if (material == null)
-            {
-                Debug.LogError("No matrial found");
-            }
-            // initialized renderer component array with this gameObject's children components of type Renderer 
-            Renderer[] arrMaterial = this.gameObject.GetComponentsInChildren<Renderer>();
-
-            foreach (Renderer r in arrMaterial)
-            {
-                // don't want to change material for character controller
-                if (r.gameObject != this.gameObject)
-                {
-
-                    // material is a public variable 
-                    r.material = material;
-                }
-            }
-
-        }
 
     }
 }
