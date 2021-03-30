@@ -19,7 +19,7 @@ namespace alistudios
                 d.updateAbility(characterStateBase, animator);
             }
         }
-
+        // Updating every single frame here
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             UpdateAll(this,animator);
