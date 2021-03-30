@@ -7,12 +7,12 @@ namespace alistudios
 {
 
     // Inherited Character Statemachine in our customClass 
-    public class CharacterStateBase : StateMachineBehaviour
+    public class CharacterState : StateMachineBehaviour
     {
 
         public List<StateData> ListAbilityData = new List<StateData>();
 
-        public void UpdateAll(CharacterStateBase characterStateBase, Animator animator)
+        public void UpdateAll(CharacterState characterStateBase, Animator animator)
         {
             foreach (StateData d in ListAbilityData)
             {

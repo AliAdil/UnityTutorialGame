@@ -10,7 +10,7 @@ namespace alistudios
     {
         // for speed we define varibale here
         public float speed;
-        public override void updateAbility(CharacterStateBase characterStateBase, Animator animator)
+        public override void updateAbility(CharacterState characterStateBase, Animator animator)
         {
              //getting charactercontroller form characterStateBase
 
