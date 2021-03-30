@@ -8,7 +8,7 @@ namespace alistudios
     [CreateAssetMenu(fileName = "New State", menuName = "alistudios/abilityData/Idle")]
     public class Idle : StateData
     {
-        public override void updateAbility(CharacterState characterStateBase, Animator animator)
+        public override void updateAbility(CharacterState characterState, Animator animator)
         {
              // when Right button is pressed 
             if (VirtualInputManager.Instance.MoveRight)

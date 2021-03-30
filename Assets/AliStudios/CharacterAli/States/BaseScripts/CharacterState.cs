@@ -12,11 +12,11 @@ namespace alistudios
 
         public List<StateData> ListAbilityData = new List<StateData>();
 
-        public void UpdateAll(CharacterState characterStateBase, Animator animator)
+        public void UpdateAll(CharacterState characterState, Animator animator)
         {
             foreach (StateData d in ListAbilityData)
             {
-                d.updateAbility(characterStateBase, animator);
+                d.updateAbility(characterState, animator);
             }
         }
         // Updating every single frame here

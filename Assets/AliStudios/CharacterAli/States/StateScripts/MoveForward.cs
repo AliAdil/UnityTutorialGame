@@ -8,13 +8,13 @@ namespace alistudios
     [CreateAssetMenu(fileName = "New State", menuName = "alistudios/abilityData/MoveForward")]
     public class MoveForward : StateData
     {
-        // for speed we define varibale here
+        // for speed we define variable here
         public float speed;
-        public override void updateAbility(CharacterState characterStateBase, Animator animator)
+        public override void updateAbility(CharacterState characterState, Animator animator)
         {
              //getting charactercontroller form characterStateBase
 
-             CharacterController c = characterStateBase.GetCharacterController(animator);
+             CharacterController c = characterState.GetCharacterController(animator);
              
               // When pressed both button
             if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
