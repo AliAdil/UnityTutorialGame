@@ -14,10 +14,10 @@ namespace alistudios
         {
              //getting charactercontroller form characterStateBase
 
-             CharacterController c = characterState.GetCharacterController(animator);
+             CharacterController control = characterState.GetCharacterController(animator);
              
               // When pressed both button
-            if (c.moveRight && c.moveLeft)
+            if (control.moveRight && control.moveLeft)
             {
                 // Setting animation to idle state
                 animator.SetBool(CharacterController.TransitionParameters.Move.ToString(), false);
@@ -25,29 +25,29 @@ namespace alistudios
             }
 
             // when no button is pressed 
-            if (!c.moveLeft && !c.moveRight)
+            if (!control.moveLeft && !control.moveRight)
             { // Setting animation to idle state
                 animator.SetBool(CharacterController.TransitionParameters.Move.ToString(), false);
                 return;
             }
             // when Right button is pressed 
-            if (c.moveRight)
+            if (control.moveRight)
             {
                 // for player movement to right
-                c.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                control.transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 // turn player face on right
                 // Euler(X,Y,Z) axis
-                c.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                control.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
 
 
             // when left button is pressed 
-            if (c.moveLeft)
+            if (control.moveLeft)
             {
                 // for player movement to left 
-                c.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                control.transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 // turn player face on left 
-                c.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                control.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
 
             }
         }
