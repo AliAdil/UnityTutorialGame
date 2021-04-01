@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3753447013477479251}
   - component: {fileID: 3753447013477479250}
   - component: {fileID: 3753447013477479249}
+  - component: {fileID: 3021865254451078437}
   m_Layer: 0
   m_Name: Bodyguard2
   m_TagString: Untagged
@@ -110,6 +111,20 @@ MonoBehaviour:
   Speed: 1
   animator: {fileID: 3753447015282005579}
   material: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
+--- !u!114 &3021865254451078437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753447013477479248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02184e96180243544b6eae023917911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3753447015291462443
 PrefabInstance:
   m_ObjectHideFlags: 0

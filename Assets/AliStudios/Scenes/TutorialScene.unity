@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 156032448}
   - component: {fileID: 156032447}
   - component: {fileID: 156032446}
+  - component: {fileID: 156032451}
   m_Layer: 0
   m_Name: DefaultFemalePolyart
   m_TagString: Untagged
@@ -260,6 +261,8 @@ MonoBehaviour:
   Speed: 1
   animator: {fileID: 1370093749}
   material: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
 --- !u!65 &156032447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -335,6 +338,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156032451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156032445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02184e96180243544b6eae023917911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590303501
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +363,7 @@ GameObject:
   - component: {fileID: 590303504}
   - component: {fileID: 590303503}
   - component: {fileID: 590303502}
+  - component: {fileID: 590303507}
   m_Layer: 0
   m_Name: DefaultMalePBR
   m_TagString: Untagged
@@ -370,6 +386,8 @@ MonoBehaviour:
   Speed: 1
   animator: {fileID: 1727809866}
   material: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
 --- !u!65 &590303503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -445,6 +463,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590303507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590303501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02184e96180243544b6eae023917911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +580,7 @@ GameObject:
   - component: {fileID: 746938359}
   - component: {fileID: 746938358}
   - component: {fileID: 746938357}
+  - component: {fileID: 746938362}
   m_Layer: 0
   m_Name: DefaultFemalePBR (1)
   m_TagString: Untagged
@@ -572,6 +603,8 @@ MonoBehaviour:
   Speed: 1
   animator: {fileID: 1070064893}
   material: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
 --- !u!65 &746938358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -647,6 +680,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746938362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746938356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02184e96180243544b6eae023917911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &797391887 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1762018173025169313, guid: d94b6c3adedb282409fcb59cb49d45bb,
@@ -672,6 +717,7 @@ GameObject:
   - component: {fileID: 1056049516}
   - component: {fileID: 1056049515}
   - component: {fileID: 1056049514}
+  - component: {fileID: 1056049519}
   m_Layer: 0
   m_Name: DefaultMalePolyart
   m_TagString: Untagged
@@ -694,6 +740,8 @@ MonoBehaviour:
   Speed: 1
   animator: {fileID: 797391887}
   material: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
 --- !u!65 &1056049515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -769,6 +817,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1056049519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056049513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02184e96180243544b6eae023917911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1070064893 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8117583199093232115, guid: f0aa068246263dd4ba7a61b712d2c765,
@@ -1148,6 +1208,7 @@ GameObject:
   - component: {fileID: 1987661810}
   - component: {fileID: 1987661809}
   - component: {fileID: 1987661808}
+  - component: {fileID: 1987661813}
   m_Layer: 0
   m_Name: DefaultFemalePBR
   m_TagString: Untagged
@@ -1170,6 +1231,8 @@ MonoBehaviour:
   Speed: 1
   animator: {fileID: 1107729227}
   material: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
 --- !u!65 &1987661809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1245,6 +1308,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1987661813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987661807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02184e96180243544b6eae023917911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2142131813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1396,11 +1471,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3753447015282005579, guid: fc0b2635e2a45194fadda92b8fde396e,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc0b2635e2a45194fadda92b8fde396e, type: 3}
 --- !u!1001 &4600767549272197835
@@ -1548,18 +1618,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 963194228, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: 78227451026a6434ba3f188a76f4315d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.51
-      objectReference: {fileID: 0}
     - target: {fileID: 7803885419156401531, guid: 78227451026a6434ba3f188a76f4315d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1619,11 +1677,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SuitedMan
-      objectReference: {fileID: 0}
-    - target: {fileID: 7806908904786947170, guid: 78227451026a6434ba3f188a76f4315d,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78227451026a6434ba3f188a76f4315d, type: 3}

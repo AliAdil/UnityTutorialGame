@@ -17,7 +17,7 @@ namespace alistudios
              CharacterController c = characterState.GetCharacterController(animator);
              
               // When pressed both button
-            if (VirtualInputManager.Instance.MoveLeft && VirtualInputManager.Instance.MoveRight)
+            if (c.moveRight && c.moveLeft)
             {
                 // Setting animation to idle state
                 animator.SetBool(CharacterController.TransitionParameters.Move.ToString(), false);
@@ -25,13 +25,13 @@ namespace alistudios
             }
 
             // when no button is pressed 
-            if (!VirtualInputManager.Instance.MoveLeft && !VirtualInputManager.Instance.MoveRight)
+            if (!c.moveLeft && !c.moveRight)
             { // Setting animation to idle state
                 animator.SetBool(CharacterController.TransitionParameters.Move.ToString(), false);
                 return;
             }
             // when Right button is pressed 
-            if (VirtualInputManager.Instance.MoveRight)
+            if (c.moveRight)
             {
                 // for player movement to right
                 c.transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -42,7 +42,7 @@ namespace alistudios
 
 
             // when left button is pressed 
-            if (VirtualInputManager.Instance.MoveLeft)
+            if (c.moveLeft)
             {
                 // for player movement to left 
                 c.transform.Translate(Vector3.forward * speed * Time.deltaTime);
