@@ -8,6 +8,8 @@ namespace alistudios
     {
         public float Duration;
 
+        public abstract void onEnter(CharacterState characterState, Animator animator);
         public abstract void updateAbility(CharacterState characterState, Animator animator);
+        public abstract void onExit(CharacterState characterState, Animator animator);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Threading;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace alistudios
     public class CharacterState : StateMachineBehaviour
     {
 
+
         public List<StateData> ListAbilityData = new List<StateData>();
 
         public void UpdateAll(CharacterState characterState, Animator animator)
@@ -19,10 +21,23 @@ namespace alistudios
                 d.updateAbility(characterState, animator);
             }
         }
+
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            
+        }
+
+
         // Updating every single frame here
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             UpdateAll(this,animator);
+        }
+
+
+        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+           
         }
 
         //Encapsulation 
